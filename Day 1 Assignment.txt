@@ -1,0 +1,33 @@
+Assignment 1
+
+Given an integer basic and a character grade which denotes the basic salary and grade of a person respectively, the task is to find the gross salary of the person.
+
+Gross Salary: The final salary computed after the additions of DA, HRA and other allowances. The formula for Gross Salary is defined as below:
+
+Gross Salary = Basic + HRA + DA + Allow – PF
+Here, HRA = 20% of Basic 
+DA = 50% of basic 
+Allow = 1700 if grade = ‘A’ 
+Allow = 1500 if grade = ‘B’ 
+Allow = 1300 if grade = ‘C’ 
+PF = 11% of basic
+
+Examples:
+
+Input: basic = 10000, grade = ‘A’
+Output: 17600
+
+
+
+ 
+2.Write a program to do the following:
+Accept the item code, description, qty and price of an item. Compute the total for the item.
+	
+Accept the user’s choice. If the choice is ‘y’ then accept the next set of inputs for a new item and compute the total. In this manner, compute the grand total for all the items purchased by the customer.
+	
+If the grand total is more than Rs. 10,000/- then, the customer is allowed a discount of 10%.
+	
+If the grand total is less than Rs. 1,000/- and the customer chooses to pay by card, then a surcharge of 2.5% is levied on the grand total. 
+
+Display the grand total for the customer.
+

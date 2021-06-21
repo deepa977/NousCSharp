@@ -1,0 +1,133 @@
+what is .net?
+why .net?
+how is the architecture?
+
+.net is a product of microsoft
+it is used for creating desktop application(execute on the desktop, winform), web application(asp.net, asp.net mvc ), mobile application(xamarin), console (command prompt), services application(web services, wCf(windows communication foundation), api)
+
+.net is used for developing distributed application
+distributed application means based on the client request a single  application can run on desktop(atm), internet banking(web), mobile banking(mobile app)
+
+.net supports 2 versions
+.net framework
+it can run only on different flavours of windows OS
+win 7/win 8/win 10/win server
+
+
+.net core(2015)
+these application can run on windows os, mac os, linux
+supports platform independent
+
+.net supports officially 4 lanugages 
+VB.NET'- enhancement to VB6.0
+C#.NET - new language of .net which takes the syntax from c++ and java. this is the language which will be used for projects
+
+Vc++.NET- enhancement to vc++ 6.0
+F#.net- new language introduced by .net
+but we can develop application in nearly 52 lanugages
+
+.net architecture
+it provides language interoperability
+it allows different types of application development like windows, xamarin, single page application, web application, service based application
+.net core -> plaform interoperability
+Components CLR -> 
+       CTS (Common type specification) -> define the datatypes that will be used when the Source code is converted into Machine code
+VB.NET -dim i as integer
+VC#.net- int i
+int , integer => compilation => CIL Code =>System.Int32
+
+whichever data typehas a mapping in CTS , those datatypes are called Managed code
+the code executed in net is called managed code
+       CLS (Common Language Specification) - syntax of different .net languages is managed by CLS
+       JIT Complier -> just in time compiler which converts the CIL code to Machine code
+       Garbage Collector-> background process that keeps monitoring the memory. when ever new application requires more memory which may not be available, it will clear the memory occupied by old idle objects and remove them 
+
+.net framework ->which consist of CIL , CTS, CLS, CLR, Justintime compiler
+ 
+Language features of C#
+csharp-> pronounced 
+C# -> # is a sharp musical note
+it takes syntax and features from c++ and java
+no support to pointers
+it is case sensitive
+it supports object oriented programming
+anycode that is written in C# has to be defined inside a class
+single line comment ->//
+multiline comment ->/*....*/
+files in C# is stored with .cs extension
+The class name and filename can be different in C#
+
+data types 
+input from keyboard
+conversion function
+
+
+numerical 
+short - 0- 65535
+int-2 pow 32 to 2 -32
+long - 2 pow 64 to 2 -64 (mobno , 16 digit card no, aadhar no)
+
+float 3.14f
+double 3.14
+decimal 3.14M
+
+byte - 0 to 225
+
+char 
+char - single char -> 'F','M'; 
+string -> bunch of char -> "Hello World
+
+others
+bool"-> true/false
+DateTime -> DateTime.Now(current Date and Time) dd/mm/yyyy
+TimeSpan -> store only time value or date value
+
+o/p -> Console.WriteLine(""Hello World");
+take input from Keyboard -> Console.ReadLine() -> will accept all input as String datatype
+
+int.Parse(Console.ReadLine())
+short.Parse()
+
+
+In 1 solution we can create many projects
+
+
+123abc56 -> i/p of value and try to convert to int , it will not convert alpha numerical values
+instead it will thrown an exception FormatException: input string is not in the correct format
+
+How to handle these errors
+Instead of using int.Parse, we can use int.TryParse which can handle the error
+
+basics
+operators like 
+conditional operator
+relational operator
+boolean operators
+binary 
+ternary
+assignment
+
+conditional constructs are
+if else
+nested if - else
+multiple if - else
+switch case  - in C# every case requires break
+default ->when none of the case is satisfied -> requires a break
+switch can work for any datatype
+
+Looping constructs are 
+while
+do---while
+for loop
+foreach(Arrays / collections)
+
+tomorrow's topics
+
+Implementing OOPs concepts in C#
+
+
+
+
+
+
+
