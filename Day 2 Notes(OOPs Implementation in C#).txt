@@ -1,0 +1,169 @@
+implementing OOPs concepts in C#
+Data Abstraction ->extracting the necessary information is called data abstraction
+
+Encapsulation-> Data Hiding
+we hide all the data inside the class
+class ->hide the data members(variables), methods(functions), constructor, properties
+we create an object of a class to access these data members
+visibilty for the contents of the class
+access specifiers
+public -. global access
+private->within the class
+protected ->parent/child class
+internal ->it is accessible within the same namespace
+
+
+
+Inheritance- reusability 
+accessing the parent class datamembers in child class is called inheritance
+.Net languages supports Single(one parent/ one or more child classes), MultiLevel inheritance(child class becomes a parent to another class)
+
+Polymorphism-> many forms of the same method with different order, type and number of parameters is called polymorphism
+static polymorphism               
+constructor overloading
+method overloading
+
+dynamic polymorphism
+method overriding
+
+default scopes in C#
+class -> internal
+datamembers, methods, property, constructor -> private
+Main(), destructor, interface implementation methods-> public
+Parent/child -anything inbuilt we use it becomes protected
+
+Every class by default inherits from Object class
+From the object class we get methods like GetType(), GetHashCode(), ToString() and Equals() which is inherited for all other classes
+
+constructor
+are used to initialize the data members of a class
+constructor is of 2 types
+default constructor
+there can be only one default constructor in a class
+it will not take parameters
+it is created by programmer . or if no type of constructor is defined in the code , then CLR will create a default constructor in which it will initialize the numerical datatypes to 0 and string char to null
+if any type of constructor is found in the program clr will not create a default constructor
+
+Parameterized or overloaded constructor
+there can be n parameterized constructor can be created
+each parameterized constructor is differentiated by the type, order and number of parameters we pass
+
+Rules when creating a constructor
+the constructor should have same name as classname
+no return type not even void
+they are called when creating object of class
+--constructor overloading is achieved as we have defined many types of constructor
+
+Memory management is done in C#
+* data between objects is not shared
+
+stack (value type)                            heap(reference type) 
+                                *anything which uses new to allocate memory is stored in heap
+copy of name, address, age, emailid, mobno     <-  shridhar
+
+ copy of name, address, age, emailid, mobno    <-bindu
+
+  copy of name, address, age, emailid, mobno    <- kumar
+
+
+  copy of name, address, age, emailid, mobno    <-deepa
+  
+if certain values are not initialized for an object, then the CLR will assign the default values
+
+destructors
+a programmer can allocate memory using the new keyword
+the deallocation of memory is done by a background process called Garbage collector
+GC -> garbage collector
+Gen0 -> new objects are created
+Gen 1-> if any object is active and there in no space in Gen 0 for new objects then GC will move the active object to GEN1
+Gen 2->if any object is active and there in no space in Gen 1for new objects then GC will move the active object to GEN2
+
+garbage collector will work only when there is requirement for memory space 
+if we want GC to remove the objects of our program immediately after execution , then we create destrutor
+Rules for Destructor
+Destructor has same name as class name
+no return type not even void
+it is the last function to be called automatically before program terminates
+destructor begins with a symbol called ~(tilde below the esc key)
+destructor cannot take parameters
+
+
+Method overloading
+method can have any name
+methods can take parameters
+method returns a value or return void'
+methods are called using object of a class
+
+same method name with different parameters we call it as method overloading
+
+how to define different types of methods in C#
+static methods -> static methods have a static keyword before specifying the return type of the method
+Eg: public static void Test()
+{
+.................
+..............
+............}
+static methods donot require object of the class to call it
+ClassName.MethodName() is the syntax for calling static method
+
+named and optional parameters
+named parameter will allow to change the order of parameters when calling the method
+optional parameter allows the parameter to be initialized . if we omit that parameter it will consider the default values
+
+params[] is used to pass parameter to a method when the method does not have a definite number of arguments
+When we want invarible number of arguments to be passed we use params
+
+params should be last parameter in the parameter list
+one method can have 1 params
+
+method overloading ->dynamic polymorphism -> inheritance
+to inherit parent class from child class :
+class child : parent{}
+protected data members, default constructor gets inherited automatically
+
+parameterized constructor has to be called in the child class
+how to call the parent class constructor in child class is called constructor chaining
+
+in C#.Net 
+virtual - override
+if the parent class method is used in child class with a different function body we call it as method overriding
+parent class -> virtual
+child class -> same method of parent in child class -> override
+
+base -> any parent class entity(variable, method, constructor) if we want to access in child class 
+base.method()
+base(paramater...)
+base.variablename
+base in C# is equal to super in java
+sealed -> if we dont want to make a class as inheritable . Final keyword in java
+new -> it will prevent a method from overriding
+
+if the parent class method has a function body it is defined as virtual,
+and if the same method is used in the child class with a different function body we define as override
+
+
+tomorrow
+abstract- override
+interfaces  
+exception handling 
+property
+C# 2.0 new features
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
