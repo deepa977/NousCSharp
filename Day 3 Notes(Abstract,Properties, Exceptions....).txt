@@ -1,0 +1,232 @@
+abstract class and interfaces
+
+abstract , override
+
+abstract class Shapes
+{
+protected double area;
+protected double perimeter;
+
+public abstract void displayArea();
+
+public abstract void displayPerimeter();
+
+}
+
+Rules 
+If a method in a class does not have any implementation logic to write, we define the method as abstract
+if a method is abstract , class also has to be defined as abstract class
+all abstract methods has to be override in child class
+we cannot create an object of a abstract class
+abstract class has to be inherited
+
+
+class Square : Shapes
+{}
+class Circle : Shapes
+{}
+
+if parent class method has an implementation and function body -> virtual
+if parent class method has no implementation and function body ->abstract
+in child class the same methods are used with different functionality ->override
+
+
+interface
+Inheritance -> advantage (reusabilty)
+Inheritance is of 2 types 
+
+
+IS A RELATIONSHIP -> when related classes reuse common things from parent to child
+Author, Employee, Student is a type of Person
+
+Cricket,Hockey, Football, BasketBall is a type of Sports
+
+Flat, Villa, Duplex House is a type of Building
+
+abstract class , normal class -> child class
+
+
+HAS A RELATIONSHIP
+unrelated classes share a common behaviour
+There is no relationship between classes like a parent and child class
+But they will share a common behaviour
+
+Interface and classes
+classes enter into contract with an interface and share the common behaviour
+interface IFlying{
+
+void fly();
+}
+
+
+
+class Bird:IFlying
+{
+
+}
+
+
+
+class Plane
+
+
+class Kite
+
+
+class Shaktiman
+
+A class can inherit from one parent class but it can implement more than one interface
+
+A class has to implement all the methods of an interface
+
+Properties 
+getter / setter methods in java is called properties in .net
+
+Initialize variables and retreive its values
+-methods
+-constructors
+-properties
+in property get{} set{} (block)
+properties are of 2 types
+
+CLR Property
+- get {} read only property
+- set {} write only property
+- get{} set{} read write property
+
+Automatic Property(C# 3.5 new features)
+get;
+set;
+Automatic property requires both get; set;
+they are read write property
+
+property value is initialized through object
+property value is retreived through object
+
+CLR Property vs method
+1. property will not take parameters
+2.property will not be void
+3. return type of the property will be the type of variable it is initializing
+
+Exception Handling
+
+is used to handle logical error
+the syntax is correct but program logic will not work
+logical error will throw runtime exception
+eg: int a,b,c;
+a=10;
+b=0;
+c=0;
+c=a/b;
+
+int []arr=new int[3];
+arr[7]=49;
+
+
+try
+{}->we put our code in try.no syntax and logical error -> o/p
+no syntax error but logic wrong means it is runtime exception
+control will come to catch block , display the error message and program will terminate
+
+catch() -> catch the errors,display the error message and terminate
+we cannot give any statement between the try{} and catch() block
+for a single we can have multiple catch blocks
+catch order should be specific to generalized ones
+
+DivideByZeroException -> only division by zero
+IndexOutOfBoundsException-> index no problem
+IOException-> related to input/output
+FileNotFoundException->the file we are trying to access is not present
+
+Exception -> it is the parent class of all exception
+parent can create object of child class
+Exception ex=new DivideByZeroException();
+
+ex=new IndexOutOfBoundsException();
+Exception can handle any type of errors
+Exception is compared to default in switch ...case
+finally -> whether an exception occurs or not finally will execute and then program terminates
+
+clean up activity is put in finally
+con.close()
+f.close();
+r=null;
+GC.Collect();
+
+throw -> which is used to handle custom exception
+
+Custom Exception inherits from parent class Exception
+
+
+C# 2.0 nEW FEATURES
+partial classes
+static class
+Generic class
+Nullable types
+
+splitting a program across multiple files
+File1.cs-> datamembers
+partial class Test{}
+
+File2.cs->constructor
+partial class Test{}
+
+File3.cs->methods 
+partial class Test{}
+debugging becomes easier
+code maintanence will be easier
+
+on compiling it will compile a single class called Test
+
+
+nullable type 
+0 != null
+
+numerical datatype - int, float, byte, double , decimal, long, short
+
+
+int age;
+default age=0 -> C#
+insert age to DB Table will it insert 0 or null
+
+int ? age=34;
+int ? age= null;
+
+
+static class Test
+
+we cannot create an object for static class
+static class cannot be inherited
+static class can contain only 
+static data members -> it will maintain only one copy of variable in memory
+static constructor ->will initialize the static variable once
+static constructor cannot be parameterized
+static method - does not require object of a class to be created
+classname.methodname()
+
+
+ref , out
+Generic classes
+Collections
+Delegates and Events
+ILDASM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
