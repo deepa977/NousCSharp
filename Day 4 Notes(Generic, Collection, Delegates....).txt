@@ -1,0 +1,244 @@
+Generic class and generic method
+
+Collections in .NET
+
+Delegates and Events
+
+Tool used to view the CILCode
+
+methods -> 2 ways to pass parameter
+call by value
+value is passed to the called variable
+
+call by ref 
+address location is passed to the called variable
+C, C++ to achieve call by ref we use *(pointers)
+but pointers are not supported by C#
+
+void add(int x, int y)
+{
+int res=x+y;
+printf("%d",result);
+}
+
+add(10,20) ;  // call by value where the value of 10 and 20 is passed to x and y variable of the function
+void add(int *a,int *b)
+{
+int res=*x+*y;
+printf("%d",result);
+}
+
+int num1=10;
+int num2=20;
+add(&num1,&num2); // call by reference where the address location of num1 and num2 is passed to x and y
+
+we dont have pointers 
+it will not support * and & operator
+
+we have 2 things for call by ref
+ref 
+is post initialization.will give values to the method parameter
+out
+is method initialization
+values are give from the method to outside variables
+
+generic classes and generic methods
+this is the concept of templates in c++
+
+swap(int x,int y)
+{
+int temp=x;
+x=y;
+y=temp;
+}
+
+swap(char x,char y)
+{
+char temp=x;
+x=y;
+y=temp;
+}
+
+swap(string x,string y)
+{
+string temp=x;
+x=y;
+y=temp;
+}
+this is an example of generic method
+when a method is a generic method we have to create a generic class
+class SwapData<T>
+{
+swap(T a,T b)
+{
+T tmp=a;
+a=b;
+b=tmp;
+}
+}
+SwapData<int> obj=new SwapData<int>();
+obj.swap(12,34);
+SwapData<char> obj1=new SwapData<int>();
+obj1.swap('L','J');
+
+class MultipleType<J,K,F>
+{
+public void Method(J a,K b, F c)
+{
+int rst=a-b-c;
+}
+MutipleType<int, string,char> obj=new MutipleType<int, string,char>();
+obj.Method(45,"name",'m');
+}
+resolve the data type of T when i am creating object for a class
+
+rule : generic types will not allow u to perform calculations
+we cannot use arithematic operator using Generic Type
+
+we can store more than one value belonging to the same datatype using Arrays
+we can create a single dimensional array
+in c# the array subscript[] should come before the array variable name
+int []arr=new int[3];
+this array can store 3 int elements
+
+char []vowels=new char[5];
+this array can store 5 char vowels
+
+We can create 2 dimensional array
+can store data as rows and cols
+int [,]matrix=new int[2,3];
+this array can store 6 elements in the form of 2 rows and 3 cols
+drawback of array-> it is static in size.it cannot grow dynamically.
+we cannot resize an array at runtime
+we can resize in code . if any change is made to code we have to recompile the code
+
+to read data from an array or collectio we use foreach
+foreach cannot be used to take input of values
+
+foreach(int a in arr)
+   Console.WriteLine(a);
+
+every value of arr is passed to the local variable a and a is printed
+the local foreach variable a should be declared inside foreach.
+int a;//compile time error
+foreach(a in arr) // both will not work
+we can initialize the array using Index no
+1st element index number begins with 0
+
+C#3.5 new features
+implicit variables
+instead of declaring the actual datatype like int, float, char, string etc, we can use the keyword var
+Rules when using implicit variables
+1. Implicit variables cannot be initialized to null
+2. they have to be declared and initialized together. based on the value assigned it will determine the datatype of the variable
+3. they r used when creating object of a class, inside a foreach loop
+they cannot be used as data member of a class or parameter to a methods
+
+Disadvantage of Array is it is static in nature
+C# has collections which is used to remove the drawback of arrays
+
+collection is similar to data structures in c/c++
+but it is very easy to use in C# as all collections are inbuilt classes
+there are 2 types of collections in C#
+Non Generic collection                                
+namespace -> System.Collections
+ICollection-> add,insert,remove
+ |
+IEnumerable -> foreach to get all items stored in the collection
+  |
+ArrayList-> items in array in sequence one after another
+Stack-> LIFO-> Last item kept on top will be the first one to be removed Pile of Books, Pile of plates
+Queue-> FIFO -> first in first out -> passenger queue -> first person standing in the queue will be the first person to enter the bus
+Hashtable -> Key/ Value pair
+Key -> unique
+eg: Rollno/Student Name
+    EmpID/Name
+    AadharNo/Person Name
+SortedList -> Key/Value
+It will sort the data based on ascending order of Key
+
+Non generic collection stores all data as Object datatype
+12->convert int to object and store as object datatype
+Hello->convert string to object
+3.14f->convert float to object
+
+   Stack                              Heap
+ primitive datatype            object datatype
+    12-----------------> object value(12)
+    hello -----------------> object value("Hello");
+Boxing -> coverting a primitive datatype to object datatype is called boxing
+           transfering all the contents in stack to heap
+UnBoxing ->coverting a object type to primitive datatype is called unboxing
+           transfering all the contents in heap to stack
+
+drawback of non generic collection is overhead of boxing and unboxing
+
+Generic collection
+  ICollection-> append (add()), insert at specific index insert(index no, "new data"),remove->removeAt(index no), removeAll() -> remove all the elements, remove(item)
+Count ->property -> check the number of elements used in the collection
+   | 
+  IEnumerable -> foreach to traverse thru the collection and get all the data
+  |
+  List<T>  -> similar ArrayList
+  Dictionary<TKEY,TValue> ->similar Hashtable
+ 
+namespace -> using System.Collections.Generic
+
+
+Delegates
+function pointers in C
+void add(int x,int y){.............}
+void sub(...);
+void mul()
+void div();
+
+
+*funcptr(int x,int y);
+funcptr=&add;
+funcptr(12,14);
+funcptr=&sub;
+funcptr(60,50);
+in C funcptr can point to one method at a time
+This Concept is called as SingleCast
+
+delegates in C# is similar to function pointers of C
+delegates work on the basis of subscription
+Delegate can point to multiple methods at the same time.So Delegates are called as MultiCastDelegates
+Delgates has 3 parts
+Declaration -> public delegate void funcptr(int x,int y);
+
+Initialization
+funcptr f=add;
+f+=sub;
+f+=mul;
+f+=div;
+
+Call
+f(13,15);
+
++= add to subscription
+-= remove from subscription
+intializing a method to a delegate, the method signature  and delegate signature should match
+
+CMD Tool ILDASM to see the CIL Code
+the exe of the project gets stored in project folder\bin\debug\proj.EXE
+The Exe of the project(compiled code) -> PE file Portable Executable 
+ILDASM-> Intermediate Language Disassembler
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
