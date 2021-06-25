@@ -1,0 +1,95 @@
+ASP.NET -> Active Server pages .net
+Designing web pages on Client Side
+HTML, Javascript/Jquery
+
+Server -> Web Application -> DB-> server side pages
+ASP.NET, JSP, Servlets, PHP
+
+ASP.NET is used for developing web application using C# or VB.NET Languages
+asp.net web pages can be designed using 
+1. HTML
+2. Asp.net Server side controls 
+they are represented in tag format. They start with asp:
+2 properties are very important for the server side controls
+id = identify the control
+runat=server
+
+<asp:Label id="Label1" runat="server"/>
+<asp:TextBox id="Label1" runat="server"/>
+<asp:DropDownList id="Label1" runat="server"/>
+<asp:RadioButton>
+<asp:CheckBox>
+<asp:ListBox/>
+<asp:Button/>
+
+
+asp.net creates 2 files for every web page we create
+1. .aspx -> design 
+2. .aspx.cs -> this is used for code behind file where we write code in C# which will validation, interact with DB, Trigger Events
+
+ASP.NET 
+IIS -internet information server is the web server for asp.net
+IIS has a web server engine
+It will take the request from the browser, it process the web page requested, It can connect to DB also
+and it will send the response page as HTML o/p to the browser
+
+when we are designing the web page in ASP.NET, IT is all drag and drop control
+
+.aspx page -> 2 tabs below
+Design Tab -> We can design the web page
+Source Tab->HTML Code gets generated
+
+Every Web Form control is defined in the namespace System.Web.UI.WebContols
+All controls like TextBox, DropDownList, ListBox -> all these are inbuilt classes
+naming conventions
+txtName
+txtAddress
+txtDOB
+ddlNationality
+rbMale
+rbFemale -> rb(radio Button)
+to change the name of the control, we have to change its ID Property
+Text-property is used to give caption to the control
+
+groupname property of radio button selects only one among them
+
+
+Web Form class inherit from System.Web.UI.Page
+asp.net -> event driven architecture
+
+
+validations can be done in asp.net using validation controls
+Automatically the validation controls convert the code into javascript and we need not write a single line of javascript code
+Javascript means validation happens on the browser side
+
+requiredfieldvalidator -> check for blank values
+rangevalidator-> this will check if data entered is in a particular range or not
+regularExpressionvalidator -> this will check for formats like email, url, mobno
+comparevalidator-> compare between 2 different values
+customvalidator -> creating user specific validation
+ValidationSummary -> It will display all the validations as list of summary on the web page
+
+for all validators 2 properties are mandatory to give
+ErrorMessage -> what is the error message to display
+ControlToValidate -> on which control the validation should be performedl0
+1 control can have multiple validators
+1 validator can validate 1 control only
+
+Custom Validator will execute on server side.
+We have to execute a CS Code which will execute at the server side
+
+
+master pages
+common contents like logo , name of the company , set of common menus are defined in master pages
+This master page will be referred inside other .aspx pages
+ Donot design anything inside content place holder
+as Name suggest, ContentPlaceHolder means it is the place where the contents of other aspx pages is displayed
+
+We cannot execute a .master file directly
+It has to be referred inside .aspx pages
+
+Monday content
+
+DataBinding -> ASP.NET -> interact with DB -> ADO.NET
+
+
