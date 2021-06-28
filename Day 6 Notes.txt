@@ -1,0 +1,140 @@
+ADO.net
+Active Data Objects .NET
+it is used for .NET Application to interact with DB
+ADO.NET has a set of library to interact with the DB
+Namespace= System.Data
+It consist of Classes, Methods and providers
+providers ->.nET  -> Drivers -> Java
+providers will help the .net application and DB to communicate
+SqlServer -> SqlProvider
+Oracle -> OracleProvider
+MySql-> MySqlProvider
+PostGreDB-> PostGreProvider
+Excel Spreadsheet, XML File -> OleDBProvider
+
+ADO.NEt -> gives 2 types of architecture
+Connected Architecture
+DB and the .NET is connected through out
+
+Disconnected Architecture
+The .NET Application is connected to a Local Datastore called Dataset
+
+
+Create in Sql Server 
+
+table PersonInfo
+
+name 
+email -> pk
+password
+Address
+MobNo
+Gender
+Age
+
+
+Create a web form which has UI(Fields) as per the columns of the table
+1. give names for the fields. Dont give default names
+change the ID property
+2. Add validation controls for all the fields
+3. To make the validation control work add the required settings in web.config file
+4. On the click of the button retreive all data entered in the fields and display in the Label
+
+
+Connected Architecture
+Insert 
+
+
+Select 
+
+
+Update
+
+Delete 
+CRUD operations examples using N Tier Architecture
+
+
+N tier Architecture 
+UI->Entity Layer->DataAccessLayer -> DB
+
+UI -> Executable code which is visible to the end user
+Entity Layer -> class Library project -> on compilation the output of this project will be a .dll file
+dynamic link library
+And this library file has to be referred in the executable project
+DAL -> classlibrary -> dll file -> referred in the executable project
+
+u can refer a class library project in an executable project , 
+right click on the project in solution explorer, add references, projects, select the project from check box, click on ok
+
+how to we refer a class defined in a different namespace
+in class in which u have to use different namespace class
+Using Enity_Layer;
+
+steps in connected architecture (Sql Server Provider)
+1.establish connection -> SqlConnection
+  Database name, Server Name,Authentication(Windows Authentication or Sql Server Authentication)
+2. Activate the connection between then.NET application and DB
+   Open()
+3.Give Query ->SqlCommand
+4. Execute the Query
+ DML (insert, update and delete) -> ExecuteNonQuery()
+DQL(select)->ExecuteReader()->SqlDataReader
+5. Print the results
+6. close the connection 
+Close()
+
+always it is a good practice to configure the connection string in web.config file
+
+<ConnectionString> is configured inside Web.Config
+Data Source="Name of sql server"
+initial catalog="Name of the Database which has our tables"
+Integrated Security="True" this says we are connecting to SqlServer thru Windows Authentication
+
+to refer the configuration file connectionstring tag in DataAccessLayer we need to add reference of System.Configuration from assemblies
+
+Assembly -> all the .net library  are accessible from assembly
+
+
+1. UI project -> Asp.NEt Web Forms
+2. Entity layer -> properties as per the columns of the table and which will get data from TextBox, RadioButton
+3. DAL -> which contains class and methods to interact with the DB
+4. Connection parameter to the DB is configured in Web.Config
+5. The Connection details from Web.config is read in DAL by adding reference from assembly called System.Configuration
+6.Using SqlProvider classes we interact with DB at the backend
+
+Convert.ToInt16()to convert an object data type to primitive datatype
+ToInt32()
+ToInt64()
+
+Int16-> short
+Int32- >int
+Int64->long
+
+
+Mini Project
+
+Create table AdminInfo
+AdminMobno ->PK
+AdminName
+AdminLoc
+AdminPassword
+
+
+Books
+ISBN -> pk
+title
+author
+category
+price
+
+create UI for Login , Register Admin, Add New Book
+
+Login , RegisterNew 
+If Admin Login is sucessful redirect him to AddNewBook which should add new book details to Books Table
+Do this using N Tier Architecture
+UI->Entity->DAL
+
+
+
+
+
