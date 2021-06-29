@@ -1,0 +1,99 @@
+Disconnected Architecture
+
+
+Coding
+Steps in Disconnected Architecture
+1. Connect to Db with all Database Parameters
+SqlConnection
+2.select query 
+SqlDataAdapter ->3 functions (open(), execute the select query, close())
+No need to explicitly open and close the connection
+3.Create a Dataset
+4. Fill()-> fill the data of the select query to Dataset
+5.Dataset changes is updated to DB by calling the Update()
+
+Databinding Controls
+These controls can show us what type of data is stored in the Dataset
+DropDownList
+GridView
+FormView 
+ResultView
+ListBox
+
+DataSet will hold the data in XML Format
+
+When to use Connected Architecture
+
+Your application is doing Insert, Update and delete queries which has to execute immediately in the Database , then go for connected architecture
+
+
+When to use Disconnected architecture
+
+If your application is a report generation application
+which means we need a lot of select queries , then use disconnected architecture
+
+Wizard
+
+Post Back -> What ever data we have selected in the browser we are posting it back to the server
+Becoz the data is sent to DB for processing 
+
+Sending the data from client to server is called postback
+
+autopostback ->post back should be done automatically
+
+------------------------------------
+
+State management
+
+we were transferring data from one project to another project
+UI to DAL->EntityLayer (properties )
+
+How to transfer data from one web page to another web page
+is done the the help of Statemanagement
+
+Client Side 
+happens at browser level
+
+Query String -> transfer data along with the URL on the address bar of the browser
+Drawback ->
+data can be easily manipulated in the URL as data is visible and not secured
+
+Cookies->are used to store client data on the client machine but it uses server side code called cookies
+if we clear history in the browser, cookies data is also cleared
+
+
+viewState- is used to store data across page postback
+
+Form - store data from html <form>
+
+HiddenField- is a invisible control(o/p of this control will not be seen on the browser). It can store some calculated values
+
+Server Side 
+Session
+session - time between login and logout is called as a session
+Every browser instance connecting to the web server is identified by a unique ID called Session  ID
+Session is used to transfer data between web pages
+Sessions are used to transfer data from one web page to another and it is better compared to Query String 
+
+
+
+ 
+Application
+caching
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
