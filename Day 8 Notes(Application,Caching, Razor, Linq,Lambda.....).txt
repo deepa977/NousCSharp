@@ -1,0 +1,157 @@
+Session -> time between login and logout is called as a session
+Every browser instance connecting to the web server is identified using SessionID
+Session ID is a unique Id used to identify 
+ which browser has sent request to the web application
+
+server and browser is connected is identified thru session id
+After connecting to web server if the browser is idle and not sending any request , automatically the session will timeout
+
+Default time out is 20 mins for IIS
+but for ticket booking and banking , if he is idle for 3 mins without sending any request, automatically session  will expire
+
+Session.TimeOut=3;
+
+Logout / Sign out -> the connection between the browser and web server will not continue as session id will get terminated
+
+Session.Abandon()
+
+
+Session["name"]=textbox1.text;
+
+we can store any type in session variable to access from one web page to another web page
+Session variable will store everything as object datatype
+
+Global.asax
+Any web page can access it
+There can be only one global.asax file in a web project
+We cannot rename this file
+It cannot be executed directly
+
+Session_Start()
+{}-> new user session has started 
+
+Session_End()
+{}-is called where we write clean code like con.close(), GC.Collect()
+This event is called when user logout or his session gets timeout
+Scope of session variable -> it is valid till user logout or timeout
+
+Application->these variables are accessible by the entire application(entire project)
+Different user session will be accessing the application variables
+
+
+Global.asax
+Handle the error globally -> application_error() handle all the unhandled exception
+Application_Start()-> when the project is hosted in the web server
+Application_End() -> when the entire project is shut down in the web server
+
+Application["varname"]=value;
+Syntax of creating an application variable
+
+Caching
+every time when we request a web page, instead of getting the same page from the web server, it will load the page from the browser's memory called cache
+This concept is called as caching
+how frequently the cache memory should get updated
+Absolute caching -> DateTime.AddMinutes(2) after every 2 mins the cache memory will get updated
+Cache Dependency-> it is dependent on the changes in the external data
+Database(new data is inserted , row is edited or deleted)
+Sliding Expiry->TimeSpan.FromMinutes(2)
+12:27 -> 12:29
+this concept works likes this
+if 12:28 -> 12:30
+12:29 -> 12:31
+12:30-> 12:32
+
+
+ASP.NET MVC
+1. Html Helpers
+2. Razor Pages
+3. DB -> Entity Framework
+
+
+html form elements(html 4)
+<input type="text">
+<textarea>
+<input type="password">
+<input type="radio">
+<input type="checkbox">
+<input type="file">
+<input type="radio">
+<select>
+
+
+enhancement to html form controls as html helpers
+@Html.TextBox("txtname")
+@Html.TextArea()
+@Html.RadioButton()
+@Html.CheckBox()
+@Html.DropDownList()
+@Html.Password()
+
+Html helpers are executed by razor engine and they are given inside razor script file
+
+
+HTML                                     
+.html or .htm
+can we write cs or javascript in html?
+javascript -><head><body> u will write <script>
+csharp -> .aspx -> if we donot want a seperate code behind file .aspx.cs
+and within .aspx itself if we want to write a csharp code , we can write it inside a asp script tag
+<% .... %>
+
+Razor script
+
+files have an extension .cshtml
+or .vbhtml
+in razor script along with html code we can write cs or vb code
+
+within html tags we can write cs code inside @
+single line statement -> @
+multiline csharp statement ->@{....}
+
+LINQ - Query Language
+Language Integrated Query
+sql select query 
+select
+from 
+where
+order by
+
+
+LINQ -> from 
+        where 
+        select
+   
+
+Lambda -> operator,Expression language
+=> arrow operator to retreive the data
+
+It can retreive data from Collections, Entity Framework(similar to ADO.NET)
+We will not write DB query in SQL Langauge but we will write in LINQ r Lambda
+ and XML
+
+int []arr={9,8,4,5,2,1,0,-5,3,6};
+foreach(var a in arr)
+{
+if(a>5)
+  Console.WriteLine(a);
+}
+
+//lambda 
+while iterating itself why cant we check for a condition
+in lambda expression the filters like where,select,order by, group by are called predicates
+foreach(var a in arr.where(n=>n>5))
+{
+Console.WriteLine(a);
+}
+
+the variable of the lambda expression are local to the predicate
+they need not be predefined
+
+
+
+
+
+
+
+
+
