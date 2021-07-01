@@ -1,0 +1,185 @@
+ASP.NEt MVC
+is also used to create web application using .NET
+when asp.net , why asp.net mvc?
+drawback of asp.net
+1. it is a tightly coupled design pattern
+.aspx -> design 
+.aspx.cs -> server side code in C#
+can both these execute independently(seperately)?
+both are dependent on each other and they cannot work independently
+2. Execute a web page -> Get Action -> Empty Form loaded on the browser is called as Get Action
+                         Post Action - Fill data and submit the data to the server 
+Asp.net can we write 2 different methods for a Get Action/ Post Action
+<input type="submit" onclick="function_get(),function_Post()">
+can we call 2 functions onclick event of a button-> it can be called in JavaScript
+In ASP.NET -> <asp:Button id="btnSubmit" onClick="btnSubmit_Click(),btnSubmitPost_Click()" Text="Submit"/>
+it will not work in asp.net
+in asp.net a single method only will execute for the Get Action and Post Action
+3. We cannot unit test the (.aspx) design pages in asp.net 
+4. NTier application
+UI->ASP.NET
+Entity Layer->Class Library Project
+DAL -> ClassLibrary Project
+
+Add references of DAL and EntityLayer in the UI
+asp.net is a event driven model
+
+ASP.NET MVC
+In the MVC Project 3 folder will be created 
+Model-> Entity Layer(properties)
+View-> UI(aspx pages)
+Controller-> Code Behind (.aspx.cs)->DAL
+
+View in asp.net mvc are razor views
+
+MVC is a loosely coupled architecture as each folder in MVC has got its own type of data to design
+
+-------------------
+
+ADO.NET -> connect to DB
+why Entity Framework -> Connect to DB
+
+
+ADO.NET combines SQl Query + C# Code which is not 100% OOPS CONCEPTS
+SqlCommand com=new SqlCommand(query,con);
+is it 100% Object Oriented or 100%  sql?
+
+orm -> OBJECT RELATIONAL MAPPER
+   Mapping
+DB   ->      Class
+Tables ->    class
+columns ->   properties
+Stored Proc -> method
+ORM -> concept -> introduced in Java -> Hibernate (mapping files has to created manually)
+Java -> came up with NHibernate -> .NET Application->(mapping files had to be creates Manually)
+
+.NET -> LINQ To SQL -> supported only sql server DB -> mapping files were created thru the wizard
+.net -> Entity Framework -> supported by all DB -> mapping files were created thru the wizard
+
+
+Entity Framework
+1. DB First Approach -> We have the DB created already and the EF Wizard will create mapping files from the existing DB and Tables
+DB   ->      Class
+Tables ->    class
+columns ->   properties
+Stored Proc -> method
+
+2. Code First Approach -> we dont have a DB created . C# code will create the Db and Tables
+class-> DB
+class->Table
+Properties->Columns of the Table
+Methods->Stored Proc
+
+3. Model First Approach -> we create a DB thru design and the design will create the DB and Tables in the Database 
+
+EF is the short form of representing Entity Framework
+Model -> EDM created 
+
+DB -> NousTrainingDB -> Conceptual Model -> NousTrainingDBEntities
+      TrainingDB-> TrainingDBEntities
+Tables 
+Emp -> Emps
+PersonInfo -> PersonInfoes
+
+
+View->UI
+Controller -> Code to interact with DB using LINq, Lambda or Entity SQL Language
+
+Rules in Controller
+1. We can give any name for the class/File but it should endwith the keyword Controller
+Emp -> EmpController
+PersonInfo -> PersonInfoController
+
+2. In the Controller for every Web Page we create we write 2 Methods
+[HttpGet]
+Code for Get Action 
+
+[HttpPost]
+Code for Post Action
+[]-> is called attributes
+They give special meaning for the c# Compiler
+They are predefined
+They are always enclosed in Square Brackets
+They are given above a class, above a constructor or above a method
+
+In a controller method if the attribute is not given then default is [HTTpGet]
+
+3.The methods in the controller cannot return void or primitive datatypes
+Empty
+Partial
+File
+
+All the return type is supported by the Parent type called ActionResult
+public ActionResult InsertPersonInfo()
+{
+return View();
+}
+
+The controller methods will return View
+
+
+The Controller method name and view name will be same
+
+We can create 2 types of Views in MVC
+Weakly Typed view -> Every HTML Element value we have to retreive manually and initialize to the model property which will be the new row containing the data
+
+user-> Call to Controller class-> invoke a method-> approriate view will get called
+to set the home page (startup page), we use the concept of routing
+Routing is configured in RouteConfig.cs
+
+RouteConfig.cs is under App_Start Folder
+
+
+Strongly Typed View-> Model itself is binded to the view
+
+In MVC Terms the Table Class and its properties is called Model
+
+We can perform validation to the Model Class Property using Data Annotations
+
+From the HomePage we will see redirection to other web pages in MVC
+html -> <a href="filename">HyperText Link</a>
+
+Html Helper =@Html.ActionLink("Link Text","ActionMethod","Controller")
+if the action method is defined in same controller class, then 3rd parameter need not be given
+
+Select All
+when the html form is loading i want the data to be displayed
+Do we need to write the logic in HTTPGEt or HTTPPost
+
+Ans -> write code in HTTpGET
+HTTpPost -> only if my form has a submit button
+
+
+
+MVC does not support ViewState
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Entity Framework
+
+
