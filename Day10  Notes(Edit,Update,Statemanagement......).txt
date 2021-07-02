@@ -1,0 +1,88 @@
+Edit 
+
+Delete 
+Type 1 -> pass the data in a query string and perform Edit and Delete thru Hyperlink
+
+Type 2-> default rule says is a html file can contain one Submit button only
+Project requirement may be to have multiple submit button
+Select, Edit and Delete with mutiple submit button
+Statemanagement is done in ASP.NET MVC
+
+Alternate to Master pages in MVC
+
+ When we are passing email as a data in URL it contains 2 special characters
+@
+.
+Email+"/" is required when we r passing emailid in url
+
+pizzaid -> do u require a "/" in this when it is passed as query string.
+Ans: No , it does not contain any special character . Not required
+
+Statemanagement in MVC
+ViewBag   
+its value becomes null when redirection occurs
+It can hold the values for one request
+get -> if we are retreiving the values in get
+Post-> value will become null, rebind the value again
+type conversion is not required as it stores data as dynamic datatype
+It will determine the datatype of the value we have assigned at runtime
+it is slower compared to view data
+They are used to pass data from controller to view
+
+
+ViewData
+key- Value pair
+ViewData["Key"]=value;
+ViewData is faster than ViewBag
+Type conversion is required when we are retreiving the value from it
+its value becomes null when redirection occurs
+It can hold the values for one request
+get -> if we are retreiving the values in get
+Post-> value will become null, rebind the value again
+They are used to pass data from controller to view
+
+TempData
+will pass data between controllers. 
+If we want to pass data between 2 consecutive request
+TempData requires typecasting
+Retain the Value stored in tempdata against consecutive request ,
+TempData.Keep()
+
+1. find if a PK value exist or not
+2. Statemanagement
+3. How to handle multiple submit button
+
+Data is transferred from Controller to View
+1. ModelBinding -> return View(var);
+View ->@model PersonInfo
+*note -> one view can refer one model class
+
+2. ViewBag
+
+3. ViewData
+
+4. TempData
+
+
+to handle multiple submit button group all the button by giving the same value in name attribute(property)
+Master pages in MVC ->_Layout.cshtml
+Every view we create will refer _ViewStart.cshtml
+and in _ViewStart.cshtml we refer _Layout.cshtml which is under Views->Shared Folder
+
+ContentPlaceHolder in MasterPages - what is it in MVC Pages ->@RenderBody
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
