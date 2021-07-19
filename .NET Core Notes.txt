@@ -1,0 +1,228 @@
+.net core
+.net core is a new version of .net framework which is free, open - source , general purpose development platform maintained by microsoft
+
+It is cross platform framework
+It can run on windows, macOS and Linux Operating system
+.NET core we can develop different types of application like mobile,desktop,web,cloud, IoT, Machine learning, micro services , gaming etc
+
+.net framework -> all inbuilt classes in .net framework is called assemblies
+.net core -> it is light weight.What ever type of project u r working, based on that install the required packages from nuGet and start working
+
+advantages
+light weight
+application speed is good
+reduce memory utilization
+project becomes easy to maintain
+
+
+
+.net framework can run only on windows platform
+It gets loaded with different API(libraries) for different application like windows, web, console
+
+features of .NET Core
+It is open source maintained by MIT and Apache
+cross platform ->It can run on any OS
+
+Consistent across Architecture :.net core application we can expect the same behaviour on X64, X86, ARM (processor)
+
+support multiple languages- VB.NET, C#.net, F#.net
+IDE vs 2017 /VS 2019
+Wide Range of application we can create like mobile,desktop,web,cloud, IoT, Machine learning, micro services , gaming etc
+
+
+CLI (common line interface)support is provided we can create .net project also in VS Code
+
+.NET Core History versions
+.NET Core 1.x -> VS 2015 , VS 2017 
+.NET Core 2.x VS 2017,2019
+.NET Core 3.x -> vs2019
+.net 5 preview1 -> 16th march 2020
+
+Asp.net mvc framework -> asp.net mvc core
+Entity framework core -> Entity Framework core
+RestAPI service connect to DB -> WebAPI Core
+Consume the RestAPI in Angular and React Project
+
+create a new DB called ProjectDB
+tables
+Product 
+productId->pk->identity
+productname 
+price
+
+Customer
+MobNo ->pk
+customername
+location
+address
+password
+
+order 
+orderid -pk->identity
+productid
+customerid
+qty
+totalamt
+
+ShoppingCartExample(solution name)
+Class Library(.net standard and .net Core)
+EntityLayer(project name)
+
+public class CustomerEntity -> define property as per the columns of the table
+public class ProductEntity
+public class OrderEntity
+
+
+
+Entity Framework -> ORM tool to connect to DB 
+It has 3 layers called EDM(Entity Data Model)
+Conceptual Model ( DB->mapped-> class, Tables->mapped->class,Column->Mapped->Property) 
+Mapping (XML)
+Storage Model (DB , tables, stored proc)
+
+Which language is used to write queries in EF
+lambda and LINQ
+
+Entity Framework core is a new version of Entity Framework after EF6.0
+It is open source,light weight,cross platform  version of entity framework data access technology
+
+EF Core is meant for .NET Core Applications
+EF Core supports 2 approaches
+Code First Approach
+Database first approach
+
+
+DB first approach like EntityFramework we will not get visual Designer(.edmx), no wizard is not supported in EF Core
+To generate the mapping classes , we have to use CLI tools
+scaffold-dbcontext 
+
+Install certain packages from nuget
+
+Install EF Core DB Provider
+Microsoft.EntityFrameworkCore.SqlServer
+
+Install is EF Core Tools
+Microsoft.EntityFrameworkCore.tools
+
+Support the EntityFramework DbContext and DBSet
+Microsoft.EntityFramework
+
+
+
+to create a model from the existing database
+scaffold-dbcontext "server=(localdb)\MSSqlLocalDB;Database=ProjectDB;Trusted_Connection=true;" Microsoft.EntityFrameworkCore.SqlServer -o Models
+
+
+
+
+    public bool InsertCustomer(CustomerEntity ce) { }
+
+        public bool InsertProduct(ProductEntity pe) { }
+
+        public bool InsertOrder(OrderEntity oe) { }
+
+        public bool DeleteProduct(int pid) { }
+
+        public bool CancelOrder(int oid) { }
+
+        public bool DeleteCustomer(long mobno) { }
+
+
+
+
+
+
+
+
+CustomerMobNo -> it should show me all details abt the orders, products he has purchased
+custname custmobno  productname  orderid qty totamt
+
+we can create a custom model if we are retreiving data from multiple tables
+
+Restful API Service which will call the DAL Methods
+
+RestAPI service we will consume in React Project
+
+in .net core restapi project to enable CORS
+we have to install from nuget microsoft.aspnetcore.cors
+
+.net core uses middleware
+middlewares in .net core applications responds to httprequest
+it can also control how our application should look when there is an error.
+suppose we use authentication and authorization , we write in middleware what actions we need to perform
+
+middleware can serve static pages like javascript file, css file or images etc
+
+
+MVC 
+mvc will have controller, model and views
+
+
+In MVC, controller methods will return ActionResult
+RestAPI
+will have only controller , model
+Views for restapi will be react or angular application
+The controller methods can return any return type. Primitive types also it can return
+
+
+in mvc application using .net framework u will find web.config
+In .NET Core MVC and RestAPI application , appsettings.json
+
+
+In MVC .NET Framework , home page is set in RouteConfig.cs
+.net core the middleware, startup page is all set in startup.cs
+
+
+
+Get->retreive data it is readonly [HttpGet]
+put->update [HttpPut]
+Post->Insert [HttpPost]
+Delete--> Delete [HttpDelete]  
+
+
+React Lifecycle methods
+web pages -> want some o/p to be executed when we click on a button
+want some o/p to be executed when the page is loading
+want to do some global setting before the page is loaded
+want to perform some settings after the page is loaded
+
+
+lifecycle methods
+componentWillMount()-> this event is execute before rendering both on server side and client side
+componentDidMount()-> this will execute after the first render only on the client side
+componentWillReceiveProps ->is invoked as soon as the props are updated before another render is called
+shouldComponentUpdate() -> this returns true/false
+default is true
+For every request if the component has to be updated. it is set to true else it is set to false
+componentWillUpdate() is called before rendering
+componentDidUpdate is called just after rendering
+componentWillUnmount() is called after the component is unmounted from the DOM
+
+
+<option value="IN">India</option>
+
+React Routing -> one home page 
+and in that link to other components will be executed
+
+
+
+react-router-dom => it is a core library meant to be installed or web applications
+react-router-native => this is a core library used with react native in the development of Android and IOS Applications
+
+
+
+BrowserRouter -> when we have a dynamic server that knows how to handle any type of URL
+HashRouter ->static web sites with a server that only responds to requests for files that knows it
+MemoryRouter ->browser cache web pages 
+
+materials UI
+
+
+
+
+
+
+
+
+
+
